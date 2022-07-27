@@ -6,5 +6,8 @@
     font-family: "Montserrat-Black";
     font-size: 3rem;
     line-height: 1.5;
+}
 
+.container-fluid{
+    padding: 3% 15%;
 }

@@ -4,7 +4,8 @@ body{
 
 #title{
     background-color: #ff4c67dc ;
-    color: #fff
+    color: #fff;
+    z-index: -3;    
 }
 
 h1{
@@ -59,16 +60,22 @@ p{
 .title-image{
     width: 60%;
     transform: rotate(25deg);
+    position: absolute;
+    z-index: -2;
+
 }
 
 /* Features Section  */
 #features{
-    padding: 3% 15%;
+    padding: 7% 15%;
+    background-color: #fff;
+    position: relative;
+    z-index: 1;
 }
 
 .feature-box{
     text-align: center;
-    padding: 5%;
+    padding: 4.5%;
 }
 
 /* ICON */

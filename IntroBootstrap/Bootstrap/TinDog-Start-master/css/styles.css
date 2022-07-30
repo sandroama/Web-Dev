@@ -1,11 +1,11 @@
 body{
     font-family: "Montserrat";
+    /* text-align: center; */
 }
 
 #title{
     background-color: #ff4c67dc ;
     color: #fff;
-    z-index: -3;    
 }
 
 h1{
@@ -30,7 +30,7 @@ p{
 }
 
 .container-fluid{
-    padding: 3% 15%;
+    padding: 3% 15% 7%;
 }
 
 /* Navigation Bar */
@@ -56,12 +56,12 @@ p{
     margin: 5% 3% 5% 0%;
 }
 
-/* TiTle Image */
-.title-image{
-    width: 60%;
+/* Phone Image */
+.phone-image{
+    width: 20%;
     transform: rotate(25deg);
     position: absolute;
-    z-index: -2;
+    right: 20%;
 
 }
 
@@ -131,4 +131,18 @@ p{
 
 .pricing-column{
     padding: 3% 2%;
+}
+
+
+/* Media Query Breakpoint */
+
+@media (max-width: 1028px){
+    #title{
+        text-align: center;
+    }
+    .phone-image{
+        position: static;
+        transform: rotate(0);
+
+    }
 }

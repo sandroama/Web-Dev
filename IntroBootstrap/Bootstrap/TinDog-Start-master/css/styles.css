@@ -1,5 +1,6 @@
 body{
-    font-family: "Montserrat";
+    font-family: Montserrat;
+    
     /* text-align: center; */
 }
 
@@ -9,19 +10,21 @@ body{
 }
 
 h1{
-    font-family: "Montserrat-Black";
+    font-family: Montserrat;
     font-weight: bold;
     font-size: 3.5rem;
     line-height: 1.5;
 }
 h2{
-    font-family: "Montserrat-Bold";
+    font-family: Montserrat;
+    font-weight: bold;
     font-size:3rem;
     line-height: 1.5;
 }
 
 h3{
-    font-family: "Montserrat-Bold";
+    font-family: Montserrat;
+    font-weight: bold;
     font-size: 1.5rem;
 }
 
@@ -48,7 +51,8 @@ p{
 }
 .nav-link{
     font-size: 1.2rem;
-    font-family: "Montserrat-Light";
+    font-family: Montserrat;
+    font-weight: lighter;
 }
 
 /* Download Buttons */
@@ -134,6 +138,32 @@ p{
 }
 
 
+
+/* cta */
+#cta{
+    background-color: #ff4c68;
+    color: #fff;
+    padding: 7% 15%;
+    text-align: center;
+
+}
+
+.cta-heading{
+    font-family: Montserrat;
+    font-size: 3.5rem;
+    line-height: 1.5;
+    font-weight: bold;
+}
+
+/* Footer */
+#footer{
+    padding: 7% 15%;
+    text-align: center;
+}
+.social-icon{
+    margin: 20px 10px;
+}
+
 /* Media Query Breakpoint */
 
 @media (max-width: 1028px){
@@ -146,3 +176,4 @@ p{
 
     }
 }
+

@@ -14,3 +14,11 @@ function test(){
 }
 
 test();
+
+
+// EX2
+var inp = prompt("What is your name");
+
+var first = inp.slice(0,1).toUpperCase();
+var second = inp.slice(1,inp.length).toLowerCase();
+alert("Hello, "+first+second);

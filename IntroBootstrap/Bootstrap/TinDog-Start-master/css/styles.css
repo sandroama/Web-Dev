@@ -1,30 +1,15 @@
 body{
     font-family: Montserrat;
-    
-    /* text-align: center; */
-}
 
-#title{
-    background-color: #ff4c67dc ;
-    color: #fff;
+    text-align: center;
 }
-
-h1{
+h1, h2, h3, h4, h5, h6{
     font-family: Montserrat;
     font-weight: bold;
-    font-size: 3.5rem;
-    line-height: 1.5;
 }
-h2{
-    font-family: Montserrat;
-    font-weight: bold;
-    font-size:3rem;
-    line-height: 1.5;
-}
+
 
 h3{
-    font-family: Montserrat;
-    font-weight: bold;
     font-size: 1.5rem;
 }
 
@@ -32,9 +17,27 @@ p{
     color: #8f8f8f;
 }
 
-.container-fluid{
-    padding: 3% 15% 7%;
+/* Headings */
+
+.big-heading{
+    font-family: Montserrat;
+    font-weight: bold;
+    font-size: 3.5rem;
+    line-height: 1.5;
+
 }
+
+.section-heading{
+    font-size: 3rem;
+    line-height: 1.5;
+}
+
+.container-fluid{
+    padding: 7% 15%;
+}
+
+
+
 
 /* Navigation Bar */
 .navbar-brand{
@@ -55,10 +58,24 @@ p{
     font-weight: lighter;
 }
 
+
 /* Download Buttons */
 .download-button{
     margin: 5% 3% 5% 0%;
 }
+
+/* Title Section */
+
+#title{
+    background-color: #ff4c67dc ;
+    color: #fff;
+    text-align: left;
+}
+
+#title .container-fluid{
+    padding: 3% 15% 7%;
+}
+
 
 /* Phone Image */
 .phone-image{
@@ -71,14 +88,12 @@ p{
 
 /* Features Section  */
 #features{
-    padding: 7% 15%;
     background-color: #fff;
     position: relative;
     z-index: 1;
 }
 
 .feature-box{
-    text-align: center;
     padding: 4.5%;
 }
 
@@ -96,8 +111,7 @@ p{
 
 /* Testimonial section */
 #testimonials{
-    padding: 7% 15%;
-    text-align: center;
+    /* padding: 7% 15%; */
     background-color: #ef8172;
     color: #fff;
 }
@@ -107,12 +121,14 @@ p{
     border-radius: 100%;  /* Circle */
     margin: 20pxs;
 }
-
+.testimonial-text{
+    font-size: 3rem;
+    line-height: 1.5;
+}
 /* press */
 
 #press{
     background-color: #ef8172;
-    text-align: center;
     padding-bottom: 3%;
 }
 
@@ -122,7 +138,6 @@ p{
 }
 
 .carousel-item{
-    padding: 7% 15%;
 }
 
 
@@ -130,11 +145,15 @@ p{
 
 #pricing{
     padding: 100px;
-    text-align: center;
 }
 
 .pricing-column{
     padding: 3% 2%;
+}
+
+.price-text{
+    font-size: 3rem;
+    line-height: 1.5;
 }
 
 
@@ -143,9 +162,6 @@ p{
 #cta{
     background-color: #ff4c68;
     color: #fff;
-    padding: 7% 15%;
-    text-align: center;
-
 }
 
 .cta-heading{
@@ -157,8 +173,7 @@ p{
 
 /* Footer */
 #footer{
-    padding: 7% 15%;
-    text-align: center;
+
 }
 .social-icon{
     margin: 20px 10px;

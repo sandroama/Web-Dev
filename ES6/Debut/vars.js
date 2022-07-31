@@ -29,3 +29,9 @@ var myName = "Sandro";
 alert(myName + " is giving the orders now!");
 var yourName = prompt("What is your name?")
 alert(yourName + " is giving the co-orders now!");
+
+// ex2
+var gameLevel = 1;
+gameLevel = 2;
+gameLevel = 3;
+alert("Your level is currently: " + gameLevel); 

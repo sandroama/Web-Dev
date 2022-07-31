@@ -32,12 +32,21 @@ p{
     line-height: 1.5;
 }
 
-
-
+/* Containers */
 .container-fluid{
     padding: 7% 15%;
 }
 
+.colored-section{
+    background-color: #ff4c67dc ;
+    color: #fff;
+
+}
+
+.white-section{
+    background-color: #fff;
+
+}
 
 
 
@@ -69,8 +78,7 @@ p{
 /* Title Section */
 
 #title{
-    background-color: #ff4c67dc ;
-    color: #fff;
+     
     text-align: left;
 }
 
@@ -115,7 +123,6 @@ p{
 #testimonials{
     /* padding: 7% 15%; */
     background-color: #ef8172;
-    color: #fff;
 }
 
 .testimonial-image{
@@ -161,10 +168,7 @@ p{
 
 
 /* cta */
-#cta{
-    background-color: #ff4c68;
-    color: #fff;
-}
+
 
 .cta-heading{
     font-family: Montserrat;

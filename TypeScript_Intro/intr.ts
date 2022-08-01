@@ -16,5 +16,5 @@ function printOperations(a, b) {
   }
   
   // Exclaim 'Muriel!' six times
-  exclaim(6, 'Muriel');
+  exclaim('Muriel',6);
    

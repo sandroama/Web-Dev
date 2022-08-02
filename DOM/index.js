@@ -11,3 +11,10 @@
 
 // var changeCol = document.getElementsByTagName("li")[2].style.color;
 // changeCol.style.color="purple";
+
+
+// Query Selector
+document.querySelector("li");
+document.querySelector("#title");
+document.querySelector("li.item");
+document.querySelector("#list a");

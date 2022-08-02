@@ -9,7 +9,7 @@
 // var challenge = document.firstElementChild.lastElementChild.lastElementChild.lastElementChild;
 // challenge.innerHTML = "sandro";
 
-// var changeCol = document.getElementsByTagName("li")[2].style.color;
+// var changeCol = documentw.getElementsByTagName("li")[2].style.color;
 // changeCol.style.color="purple";
 
 
@@ -18,3 +18,9 @@ document.querySelector("li");
 document.querySelector("#title");
 document.querySelector("li.item");
 document.querySelector("#list a");
+document.querySelector("#list .item");
+document.querySelectorAll("#list .item"); // array of elements
+document.querySelectorAll("#list .item")[index]; // specific element
+
+// challenge
+document.querySelector("#list a").style.color="yellow"

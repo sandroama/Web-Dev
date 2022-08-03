@@ -41,3 +41,12 @@
 
 // document.querySelector(".btn").classList.add("invisible");
 // document.querySelector(".btn").classList.remove("invisible");
+
+
+
+
+document.querySelector("h1").innerHTML= "<em>Good Bye</em>";
+document.querySelector("h1").textContent = "something";
+
+
+document.querySelector("a").setAttribute("href","htpps://www.bing.com");

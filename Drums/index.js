@@ -7,9 +7,11 @@ function handleClick(){
 for(let i = 0; i<document.querySelectorAll(".drum").length;i++){
     document.querySelectorAll(".drum")[i].addEventListener("click",function() {
         // console.log(this.innerHTML); 
-        this.style.color = "white";
+        
         let buttonInnerHtml = this.innerHTML;
         makeSound(buttonInnerHtml);
+        buttonAnimation(buttonInnerHtml);
+
         switch (buttonInnerHtml){ 
             case "w":
                 var tom1 = new Audio("sounds/tom-1.mp3");
@@ -58,9 +60,12 @@ for(let i = 0; i<document.querySelectorAll(".drum").length;i++){
 }
 
 
+
 // Keyboard Press
 document.addEventListener("keypress",function(event){
     makeSound(event.key);
+    buttonAnimation(event.key);
+
 });
 
 
@@ -109,6 +114,17 @@ function makeSound(key){
     }
 
 }
+
+function buttonAnimation(currentKey){
+    let activeButton = document.querySelector("."+currentKey);
+    activeButton.classList.add("pressed");
+
+
+    setTimeout(function(){
+        activeButton.classList.remove("pressed");
+
+    },100);
+}
  
 
 // let audio = new Audio('sounds/tom-1.mp3');
@@ -116,23 +132,23 @@ function makeSound(key){
 
 
 
-// Callback Function
+// // Callback Function
 
-$0.addEventListener("click",function(event){
-    console.log(event);
-});
+// $0.addEventListener("click",function(event){
+//     console.log(event);
+// });
 
 
-function anotheraddEventListener(typeofEvent,callback){
-    let eventThatHappened = {
-        eventType: "Keypress",
-        key: "p",
-        duration: 2
-    }
-    if (eventThatHappened.eventType === typeofEvent){
-        callback(eventThatHappened);
-    }
-}
+// function anotheraddEventListener(typeofEvent,callback){
+//     let eventThatHappened = {
+//         eventType: "Keypress",
+//         key: "p",
+//         duration: 2
+//     }
+//     if (eventThatHappened.eventType === typeofEvent){
+//         callback(eventThatHappened);
+//     }
+// }
 
 
 

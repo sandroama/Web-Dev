@@ -60,6 +60,10 @@ footer {
   margin: 10% auto;
 }
 
+.white{
+  text-decoration: dotted;
+}
+
 .game-over {
   background-color: red;
   opacity: 0.8;

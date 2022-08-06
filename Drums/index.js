@@ -5,11 +5,30 @@ function handleClick(){
 
 for(let i = 0; i<document.querySelectorAll(".drum").length;i++){
     document.querySelectorAll(".drum")[i].addEventListener("click",function() {
-        alert("I got clicked!");
+        // console.log(this.innerHtml); 
+        this.style.color = "white";
     });
 }
 
 
+
+
+
+// let audio = new Audio('sounds/tom-1.mp3');
+//         audio.play();
+
+
+
+
+
+
+
+
+
+
+
+
+//----------------------------
 // // High order function ex
 // function add(num1, num2){
 //     return num1 + num2;

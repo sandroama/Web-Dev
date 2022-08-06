@@ -116,7 +116,23 @@ function makeSound(key){
 
 
 
+// Callback Function
 
+$0.addEventListener("click",function(event){
+    console.log(event);
+});
+
+
+function anotheraddEventListener(typeofEvent,callback){
+    let eventThatHappened = {
+        eventType: "Keypress",
+        key: "p",
+        duration: 2
+    }
+    if (eventThatHappened.eventType === typeofEvent){
+        callback(eventThatHappened);
+    }
+}
 
 
 

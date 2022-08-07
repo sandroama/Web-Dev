@@ -13,13 +13,27 @@
 // console.log($("h1").css("font-size")); // inputing one value is getting the attribute value
 // $("h1").css("font-size","5rem"); // inputing 2 values is  setting an attribute to that second value
 
-$("h1").addClass("big-title margin50");
-// $("h1").removeClass("big-title");
+// $("h1").addClass("big-title margin50");
+// // $("h1").removeClass("big-title");
 
-$("h1").text("bye");
-// $("button").html("<em>This is me</em>");
-$("button").addClass("btn btn-primary btn-outline-secondary");
+// $("h1").text("bye");
+// // $("button").html("<em>This is me</em>");
+// $("button").addClass("btn btn-primary btn-outline-secondary");
 
-$("a").attr("href","https://www.yahoo.com");
+// $("a").attr("href","https://www.yahoo.com");
 
-// $("h1").attr("class")
+// // $("h1").attr("class")
+
+// $("h1").click(function(){
+//     $("h1").css("color","blue");
+// });
+
+for(let i=0;i<5;i++){
+    document.querySelectorAll("button")[i].addEventListener("click",function(){
+        document.querySelector("h1").style.color = "blue";
+    });
+}
+
+$("button").click(function(){
+    $("h1").css("color","purple");
+});

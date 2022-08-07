@@ -17,7 +17,8 @@ $("h1").addClass("big-title margin50");
 // $("h1").removeClass("big-title");
 
 $("h1").text("bye");
-$("button").html("<em>This is me</em>");
+// $("button").html("<em>This is me</em>");
+$("button").addClass("btn btn-primary btn-outline-secondary");
 
 $("a").attr("href","https://www.yahoo.com");
 

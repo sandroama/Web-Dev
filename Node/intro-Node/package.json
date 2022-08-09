@@ -1,0 +1,25 @@
+{
+  "name": "intro-node",
+  "version": "1.0.0",
+  "description": "Intro to Node project.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sandroama/Web-Dev.git"
+  },
+  "keywords": [
+    "npm",
+    "node",
+    "js",
+    "javascript"
+  ],
+  "author": "Sandro Amaglobeli",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sandroama/Web-Dev/issues"
+  },
+  "homepage": "https://github.com/sandroama/Web-Dev#readme"
+}

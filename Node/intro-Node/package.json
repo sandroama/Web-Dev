@@ -21,5 +21,9 @@
   "bugs": {
     "url": "https://github.com/sandroama/Web-Dev/issues"
   },
-  "homepage": "https://github.com/sandroama/Web-Dev#readme"
+  "homepage": "https://github.com/sandroama/Web-Dev#readme",
+  "dependencies": {
+    "superheroes": "^3.0.0",
+    "supervillains": "^3.0.0"
+  }
 }

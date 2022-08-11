@@ -16,6 +16,30 @@ app.post("/",function(req,res){
     res.send("The result of calculation is "+ result);
 });
 
+app.get("/bmicalculator", function(req,res){
+    res.sendFile(__dirname + "/bmiCalculator.html");
+});
+
+app.post("/bmiCalculator",function(req,res){
+    var weight = parseFloat(req.body.weight);
+    var height = parseFloat(req.body.height);
+
+    var bmi = (weight / (Math.pow(height,2))) * 10000;
+    var category =  "";
+    if(bmi<=18.5){
+        category = "Underweight";
+    } else if(bmi>18.5 && bmi <= 24.9){
+        category = "Normal Weight";
+    } else if( bmi>=25 && bmi <=29.9){
+        category = "Overweight"
+    } else if (bmi >= 30){
+        category = "Obesity"
+    }
+    res.send("Your BMI is "+ bmi);
+    res.send("<br>");
+    res.send("Your body category is "+ category);
+})
+
 app.listen(3000,function(){
     console.log("Server on port 3000");
 });

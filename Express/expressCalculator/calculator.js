@@ -35,9 +35,8 @@ app.post("/bmiCalculator",function(req,res){
     } else if (bmi >= 30){
         category = "Obesity"
     }
-    res.send("Your BMI is "+ bmi);
-    res.send("<br>");
-    res.send("Your body category is "+ category);
+    res.send("Your BMI is "+ bmi + " and your  body category is "+ category);
+    
 })
 
 app.listen(3000,function(){

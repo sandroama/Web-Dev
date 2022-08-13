@@ -1,14 +1,23 @@
 const express = require("express");
 const https = require("https");
+const bodyParser = require("body-parser");
+
 
 const app = express();
-
+app.use(bodyParser.urlencoded({extended:true})); // necessary code to start using body parser
 
 
 app.get("/",function(req,res){
-    const urlpre = "https://api.openweathermap.org/data/2.5/weather?APPID=705bb38bd85b460dc33273529a37e174&units=metric";
-    const city = "New York";
-    const url = urlpre+"&q="+city;
+    res.sendFile(__dirname +"/index.html");
+    
+});
+
+app.post("/",function(req,res){
+    const city = req.body.cityName;
+    const apiKey="705bb38bd85b460dc33273529a37e174"
+    const units = "metric"
+    const url = "https://api.openweathermap.org/data/2.5/weather?APPID="+apiKey+"&units="+units+"&q="+city;
+
     https.get(url,function(response){
         console.log(response.statusCode);
         response.on("data",function(data){
@@ -29,7 +38,11 @@ app.get("/",function(req,res){
 
         });
     })
-})
+
+});
+
+
+
 
 
 

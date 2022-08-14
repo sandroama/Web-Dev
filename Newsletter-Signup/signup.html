@@ -11,10 +11,6 @@
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/sign-in/">
 
-
-
-
-
     <!-- CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
@@ -85,33 +81,33 @@
 
 
     <!-- Custom styles for this template -->
-    <link href="style.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
 </head>
 
 <body class="text-center">
 
     <main class="form-signin w-100 m-auto">
-        <form>
+        <form method="post" action="/">
             <!-- IMAGE -->
             <img class="mb-4"
-                src="https://img.icons8.com/external-xnimrodx-blue-xnimrodx/344/external-login-freelancer-xnimrodx-blue-xnimrodx.png"
+                src="images/newsletter.png"
                 alt="" width="72" height="57">
 
             <h1 class="h3 mb-3 fw-normal">Signup to My Newsletter!</h1>
 
             <!-- First Name, Last Name, Email -->
-            <div class="form-floating">
-                <input type="text" class="form-control" placeholder="First Name" required autofocus id="floatingName">
+            <div class="form-floating top">
+                <input name="fName" type="text" class="form-control" placeholder="First Name" required autofocus id="floatingName">
                 
                 <label for="floatingName">First Name</label>
             </div>
-            <div class="form-floating">
-                <input type="text" class="form-control" placeholder="Last Name" required id="floatingLastName">
+            <div class="form-floating middle">
+                <input name="lName" type="text" class="form-control" placeholder="Last Name" required id="floatingLastName">
 
                 <label for="floatingLastName">Last Name</label>
             </div>
-            <div class="form-floating">
-                <input type="email" class="form-control" placeholder="name@example.com" required id="floatingEmail">
+            <div class="form-floating bottom">
+                <input name="email" type="email" class="form-control" placeholder="name@example.com" required id="floatingEmail">
                 
                 <label for="floatingEmail">Email address</label>
             </div>
@@ -124,11 +120,11 @@
             </div> -->
 
 
-            <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
-            <p class="mt-5 mb-3 text-muted">&copy; 2017–2022</p>
+            <button class="w-100 btn btn-lg btn-primary" type="submit">Sign Me Up!</button>
+            <p class="mt-5 mb-3 text-muted">&copy; Sandro AMA</p>
         </form>
     </main>
-
+ 
 
     <!-- JavaScript Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"

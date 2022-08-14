@@ -1,6 +1,8 @@
 const express = require("express");
 const bodyParser= require("body-parser");
 const request = require("request");
+const https = require("https");
+
 const app = express();
 
 app.use(bodyParser.urlencoded({extended:true})); // necessary code to start using body parser
@@ -9,7 +11,6 @@ app.use(express.static("public")); // adding css to the project using express.st
 
 app.get("/",function(req,res){
     res.sendFile(__dirname+"/signup.html");
-
 });
 
 app.post("/",function(req,res){
@@ -17,7 +18,7 @@ app.post("/",function(req,res){
     const firstName =req.body.fName;
     const lastName =req.body.lName;
     const email = req.body.email;
-    let data ={
+    const data ={
         members:[
             {
                 email_address: email,
@@ -28,12 +29,26 @@ app.post("/",function(req,res){
                 }
             }
         ]
-    }
-    
+    };
+    const jsonData = JSON.stringify(data);
     //
     console.log(firstName,lastName,email);
 
+    const url = "https://us14.api.mailchimp.com/3.0/lists/f5b00dd612"
 
+    const options = {
+        method: "POST",
+        auth: "Anano:d4896a0aef9f1a3113050074e3de562b-us14"
+    };
+    
+    const request = https.request(url,options,function(response){
+        response.on("data",function(data){
+            console.log(JSON.parse(data));
+        });
+    });
+
+    request.write(jsonData);
+    request.end();
 });
 
 app.listen(3000,function(){

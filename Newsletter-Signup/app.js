@@ -61,7 +61,8 @@ app.post("/failure",function(req,res){
     res.redirect("/");
 });
 
-app.listen(3000,function(){
+// process.env.PORT -- Dynamic port that allows cloud to modify
+app.listen(process.env.PORT,function(){
     console.log("Server is running");
 });
 

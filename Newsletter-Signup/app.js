@@ -62,7 +62,7 @@ app.post("/failure",function(req,res){
 });
 
 // process.env.PORT -- Dynamic port that allows cloud to modify
-app.listen(process.env.PORT,function(){
+app.listen(process.env.PORT || 3000,function(){
     console.log("Server is running");
 });
 

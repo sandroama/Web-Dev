@@ -2,6 +2,7 @@ const express = require("express");
 const bodyParser= require("body-parser");
 const request = require("request");
 const https = require("https");
+const nodemon = require("nodemon");
 
 const app = express();
 
@@ -71,3 +72,28 @@ app.listen(process.env.PORT || 3000,function(){
 
 // Audience ID
 // f5b00dd612
+
+
+
+//------------------------------
+// process.env.PORT 
+
+// procfile 
+
+// web: node app.js 
+
+
+// // CLI
+// heroku create 
+// git init 
+// git add . 
+// git commit -m "?commit"
+// git push heroku master
+
+
+
+// ---------------------- UPDATING -----------------------
+// // Push updates
+// git add . 
+// git commit -m "Changed success page"
+// git push heroku master 

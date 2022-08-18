@@ -67,8 +67,8 @@ button {
   padding-bottom: 6px;
   border-width: 0;
 }
-
-input[type="text"] {
+/* inputs that have type text */
+input[type="text"] { 
   text-align: center;
   height: 60px;
   top: 10px;

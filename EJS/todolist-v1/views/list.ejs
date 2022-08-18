@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,40 +8,42 @@
     <title>To Do List</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
+
 <body>
     <div class="box" id="heading">
-        <h1> <%= type_day %></h1>
+        <h1>
+            <%= type_day %>
+        </h1>
 
     </div>
-    
+
     <div class="box">
-        <div class="item">
-            
+        <% for(let i=0; i <newListItems.length;i++){ %>
 
-        </div>
-        <ul>
-            <li>Buy Fod</li>
-            <li>Cook Food</li>
-            <li>Eat Food</li>
-    
-            <% for(let i = 0; i <newListItems.length;i++){ %>
-                <li><%= newListItems[i] %></li>
-            <%} %> 
-    
-        </ul>
+            <div class="item">
+                <input type="checkbox" name="" id="">
+                <p>
+                    <%= newListItems[i] %>
+                </p>
+
+            </div>
+            <%} %>
+            <form action="/" method="post" class="item">
+
+                <input type="text" name="newItem" id="" placeholder="New Item" autocomplete="off">
+                <button type="submit" name="button">+</button>
+        
+            </form>
+
     </div>
-    
-
-    <form action="/" method="post" class="">
-
-        <input type="text" name="newItem" id="">
-        <button type="submit" name="button">Add</button>
-
-    </form>
-   
-    
 
 
-    
+
+
+
+
+
+
 </body>
+
 </html>

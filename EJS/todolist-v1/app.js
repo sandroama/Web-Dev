@@ -8,17 +8,25 @@ const app = express();
 app.set("view engine", "ejs"); // Using eJS with express
 
 app.get("/", function (req, res) {
-    var today = new Date();
+    // var today = new Date();
     
-    var options = {
+    // var options = {
+    //     weekday: "long",
+    //     day: "numeric",
+    //     month: "long",
+    //     year: "numeric"
+    // };
+
+    // var day = today.toLocaleDateString("en-us",options);
+
+    var day = new Date().toLocaleDateString('en-us', {
         weekday: "long",
-        day: "numeric",
-        month: "long"
-    };
-    var day = today.toLocaleDateString("en-US",options);
-
+        year: "numeric",
+        month: "short",
+        day:"numeric"
+    });
    
-
+    console.log(day);
     res.render("list", {
         type_day: day
     });

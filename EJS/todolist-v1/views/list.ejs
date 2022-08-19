@@ -1,52 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
+<%- include("header") -%>
+<div class="box" id="heading">
+    <h1>
+        <%= listTitle %>
+    </h1>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>To Do List</title>
-    <link rel="stylesheet" href="css/styles.css">
-</head>
+</div>
 
-<body>
-    <div class="box" id="heading">
-        <h1>
-            <%= listTitle %>
-        </h1>
+<div class="box">
+    <% for(let i=0; i <newListItems.length;i++){ %>
 
-    </div>
+        <div class="item">
+            <input type="checkbox" name="" id="">
+            <p>
+                <%= newListItems[i] %>
+            </p>
 
-    <div class="box">
-        <% for(let i=0; i <newListItems.length;i++){ %>
-
-            <div class="item">
-                <input type="checkbox" name="" id="">
-                <p>
-                    <%= newListItems[i] %>
-                </p>
-
-            </div>
-            <%} %>
+        </div>
+        <%} %>
             <form action="/" method="post" class="item">
- 
+
                 <input type="text" name="newItem" id="" placeholder="New Item" autocomplete="off">
-                <button type="submit" name="list" value=<%= listTitle %>>+</button>
-        
+                <button type="submit" name="list" value=<%=listTitle %>>+</button>
+
             </form>
 
-    </div>
+</div>
 
-
-
-
-
-
-
-
-</body>
-    <footer>
-        Copyright 2022 Sandro Amaglobeli
-    </footer>
-
-</html>
+<%- include("footer") -%>

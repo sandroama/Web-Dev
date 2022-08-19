@@ -66,7 +66,10 @@ app.post("/work",function(req,res){
 
 })
 
-
+// About me
+app.get("/about",function(req,res){
+    res.render("about");
+})
 
 
 app.listen(3000, function () {

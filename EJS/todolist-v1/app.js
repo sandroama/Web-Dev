@@ -6,8 +6,8 @@ const app = express();
 
 console.log(date);
 
-let items = [];
-let workItems= [];
+const items = [];
+const workItems= [];
 
 app.set("view engine", "ejs"); // Using eJS with express
 app.use(bodyParser.urlencoded({extended:true}));

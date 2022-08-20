@@ -19,12 +19,9 @@ app.use(express.static("public"));
 
 
 
-app.post("/",function(req,res){
-
-
-  res.write("The result of calculation is ");
+app.get("/",function(request,response){ 
+  response.send("<h1>Hello, world!</h1>");
 });
-
 
 
 

@@ -21,10 +21,23 @@ app.use(express.static("public"));
 
 app.get("/",function(req,res){ 
 
-  res.render("home",{homeParagraph:homeStartingContent});
+  res.render("home",{
+    pageTitle:"Home",
+    pageParagraph: homeStartingContent});
 });
 
 
+app.get("/about",function(req,res){
+  res.render("about",{
+    pageTitle:"About",
+    pageParagraph:aboutContent});
+});
+
+app.get("/contact",function(req,res){
+  res.render("contact",{
+    pageTitle:"Contact",
+    pageParagraph:aboutContent});
+});
 
 
 

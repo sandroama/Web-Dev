@@ -15,6 +15,7 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 
+const posts= [];
 
 
 
@@ -23,7 +24,9 @@ app.get("/",function(req,res){
 
   res.render("home",{
     pageTitle:"Home",
-    pageParagraph: homeStartingContent});
+    pageParagraph: homeStartingContent,
+    posts:posts
+  }); 
 });
 
 
@@ -45,8 +48,19 @@ app.get("/compose",function(req,res){
     });
 });
 
+app.post("/compose",function(req,res){
+  console.log(req.body.postTitle);
+  let post = {
+    title: req.body.postTitle,
+    content: req.body.postBody
+  };
+  posts.push(post);
+  // posts.forEach(element => {
+  //   console.log(element);
+  // });
+  res.redirect("/")
 
-
+});
 
 
 

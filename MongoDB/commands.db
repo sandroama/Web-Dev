@@ -1,0 +1,24 @@
+------ Terminal Commands ------
+mongo
+help
+show dbs
+use shopDB
+db
+db.customers.insertOne(
+    {
+        _id:1,
+        name:"Arthur",
+        lastName:"Morgan",
+        age:39
+    }
+)
+db.customers.insertOne(
+    {
+        _id:2,
+        name:"Hosea",
+        lastName:"peterson",
+        age: 45
+    }
+)
+
+---

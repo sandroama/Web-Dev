@@ -22,3 +22,31 @@ db.customers.insertOne(
 )
 
 ---
+db.customers.find()
+db.customers.find({name:"Arthur"})
+db.customers.find({age:{$gt: 18}})
+db.customers.find({_id:1},{name:1})
+
+db.customers.updateOne({_id:1},{$set:{age:33}})
+
+db.collection.deleteMany(
+    {status:"reject"}
+)
+
+db.customers.deleteOne(
+    {
+        _id:2
+    }
+)
+
+
+db.customers.insert(
+    {
+        _id:3,
+        name:"Anna",
+        lastName:"AMA",
+        age:55,
+        reviews:[{book:"Sherlock",rating:5},{book:"Harry Potter",rating:4.5}
+        ]
+    }
+)

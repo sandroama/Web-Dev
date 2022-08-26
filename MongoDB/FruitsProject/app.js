@@ -1,5 +1,7 @@
-const MongoClient = require("mongodb").MongoClient;
-const assert = require("assert");
+// const MongoClient = require("mongodb").MongoClient;
+// const assert = require("assert");
+//-----
+const mongoose = require("mongoose");
 
 // Replace the uri string with your connection string.
 const url =

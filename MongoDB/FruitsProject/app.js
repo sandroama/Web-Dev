@@ -13,7 +13,7 @@ client.connect(function(err){
     assert.equal(null,err);
     console.log("Connect succesfully to server");
     const db = client.db(dbName);
-    insertDocuments(db,function(){
+    findDocuments(db,function(){
         client.close();
     })
 });
@@ -56,8 +56,8 @@ const insertDocuments = function(db, callback) {
     collection.find({}).toArray(function(err, docs) {
       assert.equal(err, null);
       console.log("Found the following records");
-      console.log(docs)
-      callback(docs);
+      console.log(fruits)
+      callback(fruits);
     });
   }
 

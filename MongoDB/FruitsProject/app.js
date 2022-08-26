@@ -16,16 +16,49 @@ const fruit = new Fruit({
   rating: 8,
   review: "Good and essential"
 });
-
-fruit.save();
-
-
+ 
+// fruit.save();
 
 
+const personSchema = new mongoose.Schema({
+  name: String,
+  age: Number
+});
 
+const Person = mongoose.model("Person",personSchema);
 
+const person = new Person({
+  name: "Ana",
+  age: 77
+});
 
+person.save();
 
+const kiwi = new Fruit({
+  name: "Kiwi",
+  rating: 9,
+  review: "Tasty"
+});
+
+const orange = new Fruit({
+  name: "Orange",
+  rating: 7,
+  review: "Juicy fruit"
+});
+
+const banana = new Fruit({
+  name: "Banana",
+  rating: 9,
+  review: "Delicious"
+});
+
+Fruit.insertMany([kiwi,orange,banana],function(err){
+  if(err){
+    console.log(err);
+  }else{
+    console.log("SUCCESS!");
+  }
+})
 
 
 

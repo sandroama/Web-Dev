@@ -52,14 +52,26 @@ const banana = new Fruit({
   review: "Delicious"
 });
 
-Fruit.insertMany([kiwi,orange,banana],function(err){
+// Fruit.insertMany([kiwi,orange,banana],function(err){
+//   if(err){
+//     console.log(err);
+//   }else{
+//     console.log("SUCCESS!");
+//   }
+// });
+
+Fruit.find(function(err,fruits){
   if(err){
     console.log(err);
   }else{
-    console.log("SUCCESS!");
+    mongoose.connection.close();
+    fruits.forEach( x => console.log(x.name));
+    
+    // fruits.forEach(function(fruit){
+    //   console.log(fruit.name);
+    // });
   }
-})
-
+});
 
 
 

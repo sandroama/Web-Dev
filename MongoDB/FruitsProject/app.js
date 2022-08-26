@@ -2,37 +2,30 @@
 const mongoose = require("mongoose");
 mongoose.connect("mongodb://localhost:27017/fruitsDB", { useNewUrlParser: true });
 
-// New Schema
+// Fruit Schema
 const fruitSchema = new mongoose.Schema({
-  name: String,
-  rating: Number,
+  name: {
+    type: String,
+    required: [true, "Please check your data entry, no name specified!"]
+  },
+  rating: {
+    type: Number,
+    min:1,
+    max:10
+  },
   review: String
 });
 
 const Fruit = mongoose.model("Fruit", fruitSchema);
 
-const fruit = new Fruit({
-  name: "Apple",
-  rating: 8,
-  review: "Good and essential"
-});
- 
-// fruit.save();
-
-
+// Person Schema
 const personSchema = new mongoose.Schema({
   name: String,
-  age: Number
+  age: Number,
+  favoriteFruit: fruitSchema
 });
 
 const Person = mongoose.model("Person",personSchema);
-
-const person = new Person({
-  name: "Ana",
-  age: 77
-});
-
-person.save();
 
 const kiwi = new Fruit({
   name: "Kiwi",
@@ -40,25 +33,62 @@ const kiwi = new Fruit({
   review: "Tasty"
 });
 
-const orange = new Fruit({
-  name: "Orange",
-  rating: 7,
-  review: "Juicy fruit"
-});
-
-const banana = new Fruit({
-  name: "Banana",
-  rating: 9,
-  review: "Delicious"
-});
-
-// Fruit.insertMany([kiwi,orange,banana],function(err){
-//   if(err){
-//     console.log(err);
-//   }else{
-//     console.log("SUCCESS!");
-//   }
+//------------
+Person.updateOne({_id:"63091e8dff62fda44751436d"},{favoriteFruit:kiwi},function(err){
+  if(err){
+    console.log(err);
+  }else{
+    console.log("Successfully updated person")
+  }
+})
+// const pineapple = new Fruit({
+//   name: "Pineapple",
+//   score: 9,
+//   review:"Great"
 // });
+// pineapple.save();
+
+// const fruit = new Fruit({
+//   rating: 10,
+//   review: "Watermelons are the best"
+// });
+ 
+
+// kiwi.save();
+
+
+
+
+// const person = new Person({
+//   name: "George",
+//   age: 33,
+// });
+
+// person.save();
+
+
+
+// const orange = new Fruit({
+//   name: "Orange",
+//   rating: 7,
+//   review: "Juicy fruit"
+// });
+
+// const banana = new Fruit({
+//   name: "Banana",
+//   rating: 9,
+//   review: "Delicious"
+// });
+
+// // Fruit.insertMany([kiwi,orange,banana],function(err){
+// //   if(err){
+// //     console.log(err);
+// //   }else{
+// //     console.log("SUCCESS!");
+// //   }
+// // });
+
+
 
 Fruit.find(function(err,fruits){
   if(err){
@@ -73,6 +103,31 @@ Fruit.find(function(err,fruits){
   }
 });
 
+Fruit.updateOne({_id:"630915e5613a3ba0019c1727"},{name:"Watermelon"},function(err){
+  if(err){
+    console.log(err);
+  }else{
+    console.log("Successfully updated the document");
+  }
+});
+
+
+// Fruit.deleteOne({name:"Orange"},function(err){
+//   if(err){
+//     console.log(err);
+//   }else{
+//     console.log("Successfully updated the document");
+//   }
+// }); 
+
+
+Person.deleteMany({name:"Ana"},function(err){
+  if(err){
+    console.log(err);
+  }else{
+    console.log("Successfully deleted all the documents");
+  }
+});
 
 
 

@@ -40,10 +40,11 @@ const listSchema = {
 };
 
 const List = mongoose.model("List", listSchema);
+// var day = date.getDate(); // showing today on the home screen
 
 app.get("/", function (req, res) {
 
-    let day = date.getDate();
+    
 
     Item.find({}, function (err, foundItems) {
         if (foundItems.length === 0) {
@@ -73,30 +74,43 @@ app.get("/:customListName", function (req, res) {
     List.findOne({name:customListName},function(err,foundList){
         if(!err){
             if(!foundList){
-                console.log("Doesn't exist!");
+                // Create new list
+                const list = new List({
+                    name: customListName,
+                    items: defaultItems
+                });
+                list.save();
+                res.redirect("/"+customListName);
+
             } else{
-                console.log("Exists!");
+                // Show existing list
+                res.render("list",{listTitle:foundList.name,newListItems: foundList.items});
             }
         }
     });
     
-    const list = new List({
-        name: customListName,
-        items: defaultItems
-    });
-    list.save();
+    
 
 });
 
 app.post("/", function (req, res) {
 
     const itemName = req.body.newItem;
+    const listName = req.body.list;
     const item = new Item({
         name: itemName
     });
-
-    item.save();
-    res.redirect("/");
+    if(listName === day){
+        item.save();
+        res.redirect("/");
+    }else{
+        List.findOne({name: listName},function(err,foundList){
+            foundList.items.push(item);
+            foundList.save();
+            res.redirect("/"+listName);
+        });
+    }
+    
 
     // let item = req.body.newItem;
 
@@ -111,26 +125,39 @@ app.post("/", function (req, res) {
     // }
 });
 
-app.get("/work", function (req, res) {
-    res.render("list", { listTitle: "Work List", newListItems: workItems });
-});
+// app.get("/work", function (req, res) {
+//     res.render("list", { listTitle: "Work List", newListItems: workItems });
+// });
 
-app.post("/work", function (req, res) {
-    let item = req.body.newItem;
-    workItems.push(item);
-    res.redirect("/work");
+// app.post("/work", function (req, res) {
+//     let item = req.body.newItem;
+//     workItems.push(item);
+//     res.redirect("/work");
 
-})
+// })
 
 
 app.post("/delete", function (req, res) {
     const checkedItemId = req.body.boxbox;
-    Item.findByIdAndRemove(checkedItemId, function (err) {
-        if (!err) {
-            console.log("Successfully deleted checked item");
-            res.redirect("/");
-        }
-    });
+    const listName = req.body.listName;
+
+    if(listName === day){
+        Item.findByIdAndRemove(checkedItemId, function (err) {
+            if (!err) {
+                console.log("Successfully deleted checked item");
+                res.redirect("/");
+            }
+        });
+    } else{
+        List.findOneAndUpdate({name:listName},{$pull:{items:{_id:checkedItemId}}}, function(err, foundList){
+            if(!err){
+                res.redirect("/"+listName);
+            }
+        });
+
+    }
+
+    
 });
 
 // About me

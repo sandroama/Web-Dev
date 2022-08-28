@@ -18,6 +18,9 @@
   ],
   "author": "Sandro Amaglobeli",
   "license": "ISC",
+  "engines": {
+    "node": "16.16.0"
+  },
   "bugs": {
     "url": "https://github.com/sandroama/Web-Dev/issues"
   },

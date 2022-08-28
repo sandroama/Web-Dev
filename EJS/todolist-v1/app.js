@@ -34,7 +34,12 @@ const item3 = new Item({
 
 const defaultItems = [item1, item2, item3];
 
+const listSchema = {
+    name: String,
+    items: [itemSchema]
+};
 
+const List = mongoose.model("List", listSchema);
 
 app.get("/", function (req, res) {
 
@@ -55,28 +60,39 @@ app.get("/", function (req, res) {
         }
 
     });
-
-
-
     // var day = new Date().toLocaleDateString('en-us', {
     //     weekday: "long",
     //     year: "numeric",
     //     month: "short",
     //     day:"numeric"
     // });
-
-
-
-
 });
 
+app.get("/:customListName", function (req, res) {
+    const customListName = req.params.customListName;
+    List.findOne({name:customListName},function(err,foundList){
+        if(!err){
+            if(!foundList){
+                console.log("Doesn't exist!");
+            } else{
+                console.log("Exists!");
+            }
+        }
+    });
+    
+    const list = new List({
+        name: customListName,
+        items: defaultItems
+    });
+    list.save();
 
+});
 
 app.post("/", function (req, res) {
 
     const itemName = req.body.newItem;
     const item = new Item({
-        name: itemName 
+        name: itemName
     });
 
     item.save();
@@ -97,8 +113,6 @@ app.post("/", function (req, res) {
 
 app.get("/work", function (req, res) {
     res.render("list", { listTitle: "Work List", newListItems: workItems });
-
-
 });
 
 app.post("/work", function (req, res) {
@@ -109,10 +123,10 @@ app.post("/work", function (req, res) {
 })
 
 
-app.post("/delete",function(req,res){
+app.post("/delete", function (req, res) {
     const checkedItemId = req.body.boxbox;
-    Item.findByIdAndRemove(checkedItemId, function(err){
-        if(!err){
+    Item.findByIdAndRemove(checkedItemId, function (err) {
+        if (!err) {
             console.log("Successfully deleted checked item");
             res.redirect("/");
         }

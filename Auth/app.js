@@ -4,6 +4,7 @@ const bodyParser = require('body-parser');
 const ejs = require('ejs');
 const mongoose = require('mongoose');
 const app = express();
+const encrypt = require('mongoose-encryption');
 
 
 app.use(express.static('public'));
@@ -13,10 +14,13 @@ app.use(bodyParser.urlencoded({
 }));
 
 mongoose.connect('mongodb://localhost:27017/userDB',{useNewUrlParser: true});
-const userSchema ={
+const userSchema = new mongoose.Schema({
     email: String,
     password: String 
-};
+});
+
+const secret = "BIGschemaSecretschema";
+userSchema.plugin(encrypt,{secret:secret, encryptedFields:["password"]});
 
 const User = new mongoose.model("User", userSchema);
 
@@ -45,6 +49,23 @@ app.post("/register",function(req,res){
         }
 
 
+    })
+})
+
+app.post("/login",function(req,res){
+    const username = res.body.username;
+    const password = res.body.password;
+
+    User.findOne({email:username}, function(err, foundUser){
+        if(err){
+            console.log(err);
+        } else{
+            if(foundUser){
+                if(foundUser.password===password){
+                    res.render("secrets");
+                }
+            }
+        }
     })
 })
 
